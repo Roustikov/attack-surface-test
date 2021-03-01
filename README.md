@@ -18,10 +18,7 @@ All environment variables and essential settings are located in `docker-compose.
 * You can browse DB structure by opening `http://127.0.0.1:7474/browser/` and logging in with `NEO4J_USERNAME` and `NEO4J_PASSWORD` from the `docker-compose.env`.
 * To view DB connection graph - open `http://127.0.0.1:7474/browser/` in your web browser and enter `MATCH (n) RETURN n LIMIT 25` in the "query bar" at the top.
 
-<details>
-  <summary>View DB Structure Example</summary>
-  ![DB Structure Example](readme_images/db_structure.png)
-</details>
+![DB Structure Example](../../blob/master/readme_images/db_structure.PNG)
 
 ## UNIT TESTING ##
 * Since neo4j isn't a Django-coupled DB engine - we must rely on a separate DB instance running in docker container.
