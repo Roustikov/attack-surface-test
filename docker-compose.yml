@@ -24,3 +24,8 @@ services:
       - ./vm_db/logs:/logs
       - ./vm_db/plugins:/plugins
     env_file: ./docker-compose.env
+    healthcheck:
+        test: ["CMD", "curl", "-f", "http://127.0.0.1:7474/browser/"]
+        interval: 15s
+        timeout: 10s
+        retries: 5

@@ -15,8 +15,8 @@ class FwRuleRel(StructuredRel):
 
 
 class VM(StructuredNode):
-    vm_id = StringProperty(unique_index=True, required=True)
-    name = StringProperty(default="no_name_vm")
+    vm_id = StringProperty()
+    name = StringProperty()
     tags = ArrayProperty(StringProperty())
     inbound_rules = RelationshipTo('VM', 'CONNECTS_TO', model=FwRuleRel)
 
