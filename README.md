@@ -20,7 +20,7 @@ All environment variables and essential settings are located in `docker-compose.
 
 <details>
   <summary>View DB Structure Example</summary>
-  ![DB Structure Example](readme_images/db_structure.png)
+  ![DB Structure Example](../../blob/master/readme_images/db_structure.PNG)
 </details>
 
 ## UNIT TESTING ##
