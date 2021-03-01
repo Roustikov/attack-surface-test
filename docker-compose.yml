@@ -1,10 +1,10 @@
 services:
   app:
     image: python:3.8
-    command: sh -c "pip install -r requirements.txt && python attack_surface/manage.py install_labels && python attack_surface/manage.py load_json && python attack_surface/manage.py runserver 0.0.0.0:80"
-    working_dir: /app
+    command: sh -c "pip install -r requirements.txt && python manage.py install_labels && python manage.py load_json && python manage.py runserver 0.0.0.0:80"
+    working_dir: /attack_surface
     volumes:
-      - ./app:/app
+      - ./attack_surface:/attack_surface
     ports:
       - 80:80
     depends_on:
