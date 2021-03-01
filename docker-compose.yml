@@ -1,0 +1,26 @@
+services:
+  app:
+    image: python:3.8
+    command: sh -c "pip install -r requirements.txt && python attack_surface/manage.py install_labels && python attack_surface/manage.py load_json && python attack_surface/manage.py runserver 0.0.0.0:80"
+    working_dir: /app
+    volumes:
+      - ./app:/app
+    ports:
+      - 80:80
+    depends_on:
+      - vm_db
+    env_file: ./docker-compose.env
+
+  vm_db:
+    image: neo4j:4.2.3
+    ports:
+      - 7687:7687
+      - 7474:7474
+      - 7473:7473
+    volumes:
+      - ./vm_db/conf:/conf
+      - ./vm_db/data:/data
+      - ./vm_db/import:/import
+      - ./vm_db/logs:/logs
+      - ./vm_db/plugins:/plugins
+    env_file: ./docker-compose.env
