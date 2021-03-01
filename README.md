@@ -6,6 +6,7 @@ The main goal of this service is to allow you to check for possible attack surfa
 The project consists of two Docker containers linked via `docker-compose.yml`
 * `app` - The main service is a vanilla Django api
 * `vm_db` - The DB is operated by neo4j graph database
+
 All environment variables and essential settings are located in `docker-compose.env`
 
 ## USAGE ##
