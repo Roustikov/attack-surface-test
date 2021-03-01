@@ -18,7 +18,7 @@ from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-env_path = Path('.docker-compose.env') / '.env'
+env_path = BASE_DIR.parent / 'docker-compose.env'
 load_dotenv(dotenv_path=env_path)
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s %(message)s')
@@ -27,7 +27,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s %(message)s')
 SECRET_KEY = 'l5tcr06cudje=zwpuhp!4xrv0vc29awr)1sp9k853n3#3yt60r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = Flase
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', '0.0.0.0']
 
